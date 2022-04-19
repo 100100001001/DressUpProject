@@ -3,27 +3,39 @@ using UnityEngine.EventSystems;
 
 public class Drag : MonoBehaviour
 {
-    void Start()
+
+    public Vector3 startPosition = Vector3.zero;
+
+    private void OnMouseDown()
     {
-        //Fetch the Event Trigger component from your GameObject
-        EventTrigger trigger = GetComponent<EventTrigger>();
-        //Create a new entry for the Event Trigger
-        EventTrigger.Entry entry = new EventTrigger.Entry();
-        //Add a Drag type event to the Event Trigger
-        entry.eventID = EventTriggerType.Drag;
-        //call the OnDragDelegate function when the Event System detects dragging
-        entry.callback.AddListener((data) => { OnDragDelegate((PointerEventData)data); });
-        //Add the trigger entry
-        trigger.triggers.Add(entry);
+        //Debug.Log("OnMouseDown()");
     }
 
-    public void OnDragDelegate(PointerEventData data)
+    private void OnMouseDrag()
     {
-        //Create a ray going from the camera through the mouse position
-        Ray ray = Camera.main.ScreenPointToRay(data.position);
-        //Calculate the distance between the Camera and the GameObject, and go this distance along the ray
-        Vector3 rayPoint = ray.GetPoint(Vector3.Distance(transform.position, Camera.main.transform.position));
-        //Move the GameObject when you drag it
-        transform.position = rayPoint;
+        //Debug.Log("OnMouseDrag()");
+
+
+        Vector3 pickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector3(pickPosition.x, pickPosition.y, 0);
+
+        //Vector3 mousePosition = new Vector3(pickPosition.x, pickPosition.y, 0);
+        //transform.position = mousePosition;
+
+        //transform.position = new Vector3(pickPosition.x, pickPosition.y, pickPosition.y);
+
+
     }
+
+    private void OnMouseUp()
+    {
+        //Debug.Log("OnMouseUp()");
+
+        if (Vector3.Distance(Character.instance.transform.position, transform.position) <= 1.0f)
+        {
+            gameObject.transform.position = Vector3.zero;
+        }
+
+    }
+
 }

@@ -50,3 +50,6 @@ TagManager:
   - name: eye
     uniqueID: 2256399045
     locked: 0
+  - name: clothes
+    uniqueID: 3670563351
+    locked: 0
