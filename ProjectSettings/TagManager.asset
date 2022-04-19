@@ -41,15 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 2720863289
+  - name: character
+    uniqueID: 3906838137
     locked: 0
-  - name: Middleground
-    uniqueID: 1987200761
+  - name: hair
+    uniqueID: 1796985655
     locked: 0
-  - name: Foreground
-    uniqueID: 4038482581
-    locked: 0
-  - name: UI
-    uniqueID: 624216049
+  - name: eye
+    uniqueID: 2256399045
     locked: 0
