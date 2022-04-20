@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum FaceType
+public enum CharacterType
 {
     HAIR,
-    EYE
+    EYE,
+    ONEPIECE
 }
 
 public class FaceButton : MonoBehaviour
 {
-    public FaceType faceType;
+    public CharacterType characterType;
 
     private void Start()
     {
@@ -22,13 +23,13 @@ public class FaceButton : MonoBehaviour
     {
         //Debug.Log("OnClick()");
 
-        switch (faceType)
+        switch (characterType)
         {
-            case FaceType.HAIR:
-                Character.instance.gameObject.transform.GetChild((int)FaceType.HAIR).GetComponent<SpriteRenderer>().sprite = transform.GetChild(0).gameObject.GetComponent<Image>().sprite;
+            case CharacterType.HAIR:
+                Character.instance.gameObject.transform.GetChild((int)CharacterType.HAIR).GetComponent<SpriteRenderer>().sprite = transform.GetChild(0).gameObject.GetComponent<Image>().sprite;
                 break;
-            case FaceType.EYE:
-                Character.instance.gameObject.transform.GetChild((int)FaceType.EYE).GetComponent<SpriteRenderer>().sprite = transform.GetChild(0).gameObject.GetComponent<Image>().sprite;
+            case CharacterType.EYE:
+                Character.instance.gameObject.transform.GetChild((int)CharacterType.EYE).GetComponent<SpriteRenderer>().sprite = transform.GetChild(0).gameObject.GetComponent<Image>().sprite;
                 break;
         }
     }
