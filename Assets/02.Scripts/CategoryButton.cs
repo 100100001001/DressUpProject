@@ -10,8 +10,10 @@ using UnityEngine.UI;
 
 public enum CategoryType
 {
-    HAIR,
-    EYE,
+
+    FACE,
+    //HAIR,
+    //EYE,
     ONEPIECE
 }
 
@@ -32,20 +34,13 @@ public class CategoryButton : MonoBehaviour
 
         switch (categoryType)
         {
-            case CategoryType.HAIR:
+            case CategoryType.FACE:
                 CanvasManager.instance.AllSetActive(false);
-                CanvasManager.instance.gameObject.transform.GetChild((int)CharacterType.HAIR).gameObject.SetActive(true);
-                break;
-            case CategoryType.EYE:
-                CanvasManager.instance.AllSetActive(false);
-                CanvasManager.instance.gameObject.transform.GetChild((int)CharacterType.EYE).gameObject.SetActive(true);
+                CanvasManager.instance.gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 break;
             case CategoryType.ONEPIECE:
                 CanvasManager.instance.AllSetActive(false);
-                CanvasManager.instance.gameObject.transform.GetChild(2).gameObject.SetActive(true);
-
-
-
+                CanvasManager.instance.gameObject.transform.GetChild(1).gameObject.SetActive(true);
                 break;
         }
     }
