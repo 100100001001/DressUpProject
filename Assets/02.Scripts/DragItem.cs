@@ -18,10 +18,7 @@ public class DragItem : MonoBehaviour
 
     public GameObject prefab;
 
-
     private GameObject copyGameObject;
-
-
 
     //private void Start()
     //{
@@ -45,14 +42,21 @@ public class DragItem : MonoBehaviour
 
         if (GameManager.instance.IsPick == false)
         {
-            SetAlpha(true);
 
-            GameObject copyGameObject = Instantiate(prefab, transform.position, Quaternion.identity, GameManager.instance.gameObject.transform);
-            copyGameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
-            copyGameObject.AddComponent<PolygonCollider2D>();
+            //if (gameObject.GetComponent<SpriteRenderer>().sprite == )
+            if (gameObject.GetComponent<SpriteRenderer>().color.a == 1.0f)
+            {
+                SetAlpha(true);
 
-            //GameManager.instance.isPick = true;
-            GameManager.instance.IsPick = true;
+                GameObject copyGameObject = Instantiate(prefab, transform.position, Quaternion.identity, GameManager.instance.gameObject.transform);
+                copyGameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+                copyGameObject.AddComponent<PolygonCollider2D>();
+
+                //GameManager.instance.isPick = true;
+                GameManager.instance.IsPick = true;
+
+            }
+
         }
 
     }

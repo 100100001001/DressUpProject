@@ -41,6 +41,24 @@ public class CategoryButton : MonoBehaviour
             case CategoryType.ONEPIECE:
                 CanvasManager.instance.AllSetActive(false);
                 CanvasManager.instance.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+
+                // 위치 초기화
+
+                foreach (Transform child in CanvasManager.instance.gameObject.transform.GetChild(1).gameObject.transform)
+                {
+                    //Debug.Log(child.name);
+
+                    if (Character.instance.gameObject.transform.GetChild((int)CharacterType.ONEPIECE).GetComponent<SpriteRenderer>().sprite != child.gameObject.GetComponent<SpriteRenderer>().sprite)
+                    {
+                        child.gameObject.GetComponent<DragItem>().SetAlpha(false);
+                    }
+                    else
+                    {
+                        child.gameObject.GetComponent<DragItem>().SetAlpha(true);
+                    }
+                }
+
+
                 break;
         }
     }

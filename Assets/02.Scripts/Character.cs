@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum CharacterType
+{
+    HAIR,
+    EYE,
+    ONEPIECE
+}
+
 public class Character : MonoBehaviour
 {
     public static Character instance;

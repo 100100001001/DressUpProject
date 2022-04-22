@@ -87,6 +87,8 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             {
                 //CanvasManager.instance
 
+                Sprite S = Character.instance.gameObject.transform.GetChild((int)CharacterType.ONEPIECE).GetComponent<SpriteRenderer>().sprite;
+
                 Character.instance.gameObject.transform.GetChild((int)CharacterType.ONEPIECE).GetComponent<SpriteRenderer>().sprite = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
 
                 //for (int i = 0; i < CanvasManager.instance.gameObject.transform.GetChild(1).childCount; i++)
@@ -96,12 +98,61 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                 //}
 
                 //
+
+
+
+                foreach (Transform child in CanvasManager.instance.gameObject.transform.GetChild(1).gameObject.transform)
+                {
+                    //Debug.Log(child.name);
+
+                    //if (gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite != child.gameObject.GetComponent<SpriteRenderer>().sprite)
+                    if (S == child.gameObject.GetComponent<SpriteRenderer>().sprite)
+                    {
+                        child.gameObject.GetComponent<DragItem>().SetAlpha(false);
+                    }
+                    //else
+                    //{
+                    //    child.gameObject.GetComponent<DragItem>().SetAlpha(true);
+                    //}
+                }
+
+
+
             }
 
             if (gameObject.transform.GetChild(0).gameObject != null)
             {
                 Destroy(gameObject.transform.GetChild(0).gameObject);
             }
+
+        }
+        else
+        {
+            // 지금 선택한 옷과 캐릭터가 입고 있는 옷이 같지 않을 때
+            if (gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite != Character.instance.gameObject.transform.GetChild((int)CharacterType.ONEPIECE).GetComponent<SpriteRenderer>().sprite)
+            {
+                foreach (Transform child in CanvasManager.instance.gameObject.transform.GetChild(1).gameObject.transform)
+                {
+                    //Debug.Log(child.name);
+
+                    //if (gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite != child.gameObject.GetComponent<SpriteRenderer>().sprite)
+                    if (gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite == child.gameObject.GetComponent<SpriteRenderer>().sprite)
+                    {
+                        child.gameObject.GetComponent<DragItem>().SetAlpha(false);
+                    }
+                    //else
+                    //{
+                    //    child.gameObject.GetComponent<DragItem>().SetAlpha(true);
+                    //}
+                }
+
+            }
+
+            if (gameObject.transform.GetChild(0).gameObject != null)
+            {
+                Destroy(gameObject.transform.GetChild(0).gameObject);
+            }
+
 
         }
 

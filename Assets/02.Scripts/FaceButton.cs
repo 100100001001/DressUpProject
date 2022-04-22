@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum CharacterType
-{
-    HAIR,
-    EYE,
-    ONEPIECE
-}
+
 
 public class FaceButton : MonoBehaviour
 {

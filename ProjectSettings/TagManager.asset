@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: bg
+    uniqueID: 3225693285
+    locked: 0
   - name: character
     uniqueID: 3906838137
     locked: 0
@@ -52,4 +55,10 @@ TagManager:
     locked: 0
   - name: clothes
     uniqueID: 3670563351
+    locked: 0
+  - name: Pick
+    uniqueID: 79573669
+    locked: 0
+  - name: Canvas
+    uniqueID: 1423874773
     locked: 0
