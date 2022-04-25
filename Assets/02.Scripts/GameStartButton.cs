@@ -14,7 +14,7 @@ public class GameStartButton : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("OnClick");
+        //Debug.Log("OnClick");
 
         SceneManager.LoadScene("GameScene");
 

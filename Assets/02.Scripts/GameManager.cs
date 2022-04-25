@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             return;
         }
 
-        Debug.Log("OnDrag()");
+        //Debug.Log("OnDrag()");
 
         Vector3 pickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         pickPosition.z = 0;
