@@ -1,27 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//public enum ItemType
-//{
-//    ONEPIECE
-//}
-
 public enum CategoryType
 {
-
     FACE,
-    //HAIR,
-    //EYE,
-    ONEPIECE
+    TOP,
+    BOTTOM,
+    ONEPIECE,
+    ACC
 }
 
 public class CategoryButton : MonoBehaviour
 {
-
     public CategoryType categoryType;
-
 
     void Start()
     {
@@ -36,33 +30,50 @@ public class CategoryButton : MonoBehaviour
         {
             case CategoryType.FACE:
                 CanvasManager.instance.AllSetActive(false);
-                CanvasManager.instance.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.SetActive(true);
                 break;
+
+            case CategoryType.TOP:
+                CanvasManager.instance.AllSetActive(false);
+                CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.TOP).gameObject.SetActive(true);
+
+                GetItemSetAlpha(CategoryType.TOP, CharacterType.TOP);
+                break;
+
+            case CategoryType.BOTTOM:
+                CanvasManager.instance.AllSetActive(false);
+                CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.BOTTOM).gameObject.SetActive(true);
+
+                GetItemSetAlpha(CategoryType.BOTTOM, CharacterType.BOTTOM);
+                break;
+
             case CategoryType.ONEPIECE:
                 CanvasManager.instance.AllSetActive(false);
-                CanvasManager.instance.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ONEPIECE).gameObject.SetActive(true);
 
-                // 위치 초기화
-
-                foreach (Transform child in CanvasManager.instance.gameObject.transform.GetChild(1).gameObject.transform)
-                {
-                    //Debug.Log(child.name);
-
-                    if (Character.instance.gameObject.transform.GetChild((int)CharacterType.ONEPIECE).GetComponent<SpriteRenderer>().sprite != child.gameObject.GetComponent<SpriteRenderer>().sprite)
-                    {
-                        child.gameObject.GetComponent<DragItem>().SetAlpha(false);
-                    }
-                    else
-                    {
-                        child.gameObject.GetComponent<DragItem>().SetAlpha(true);
-                    }
-                }
-
+                GetItemSetAlpha(CategoryType.ONEPIECE, CharacterType.ONEPIECE);
 
                 break;
         }
     }
 
+    public void GetItemSetAlpha(CategoryType categoryType, CharacterType characterType)
+    {
+        // 알파 값 조절해서 입은 옷 표시
+        foreach (Transform child in CanvasManager.instance.gameObject.transform.GetChild((int)categoryType).gameObject.transform)
+        {
+            //Debug.Log(child.name);
 
+            if (Character.instance.gameObject.transform.GetChild((int)characterType).GetComponent<SpriteRenderer>().sprite != child.gameObject.GetComponent<SpriteRenderer>().sprite)
+            {
+                child.gameObject.GetComponent<DragItem>().SetAlpha(false);
+            }
+            else
+            {
+                child.gameObject.GetComponent<DragItem>().SetAlpha(true);
+            }
+        }
+
+    }
 
 }

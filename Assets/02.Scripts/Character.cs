@@ -2,16 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public enum CharacterType
 {
     HAIR,
     EYE,
-    ONEPIECE
+    TOP,
+    BOTTOM,
+    ONEPIECE,
+    HAT,
+    GLASSES,
+    EARRING,
+    NECKLACE,
+    SHOES,
+    SOCKS
 }
 
 public class Character : MonoBehaviour
 {
+
     public static Character instance;
 
     void Start()
@@ -30,8 +38,9 @@ public class Character : MonoBehaviour
         }
     }
 
-    void Update()
-    {
+    //void Update()
+    //{
 
-    }
+    //}
+
 }

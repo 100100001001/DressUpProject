@@ -41,7 +41,10 @@ public class SaveButton : MonoBehaviour
         //m_FilePath = m_Path + m_FilePrefix + DateTime.Now.ToString("yyyyMMddhhmmss") + ".png";
         //ScreenCapture.CaptureScreenshot(m_FilePath);
 
-        ScreenCapture.CaptureScreenshot("C:\\Users\\user\\Desktop\\"+ "Screenshot_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".png");
+        //ScreenCapture.CaptureScreenshot("C:\\Users\\user\\Desktop\\"+ "Screenshot" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".png");
+
+        ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop),
+        "Screenshot" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".png"));
 
         //Application.CaptureScreenshot("Screenshot.png");
     }

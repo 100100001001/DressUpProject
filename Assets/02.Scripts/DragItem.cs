@@ -20,6 +20,9 @@ public class DragItem : MonoBehaviour
 
     private GameObject copyGameObject;
 
+    public CharacterType itemType;
+
+
     //private void Start()
     //{
     //    startPosition = transform.position;
@@ -51,6 +54,7 @@ public class DragItem : MonoBehaviour
                 GameObject copyGameObject = Instantiate(prefab, transform.position, Quaternion.identity, GameManager.instance.gameObject.transform);
                 copyGameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
                 copyGameObject.AddComponent<PolygonCollider2D>();
+                copyGameObject.GetComponent<PickPrefab>().pickType = itemType;
 
                 //GameManager.instance.isPick = true;
                 GameManager.instance.IsPick = true;
