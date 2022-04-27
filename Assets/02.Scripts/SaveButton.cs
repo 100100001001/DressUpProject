@@ -15,6 +15,8 @@ public class SaveButton : MonoBehaviour
     public string m_FilePrefix = "hehe";
     private string m_FilePath;
 
+    public AudioClip audioClip;
+
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(OnClick);
@@ -47,5 +49,9 @@ public class SaveButton : MonoBehaviour
         "Screenshot" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".png"));
 
         //Application.CaptureScreenshot("Screenshot.png");
+
+        SoundManager.instance.GetComponent<AudioSource>().clip = audioClip;
+        SoundManager.instance.GetComponent<AudioSource>().Play();
+
     }
 }

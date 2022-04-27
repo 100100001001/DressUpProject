@@ -96,17 +96,26 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                 case CharacterType.ONEPIECE:
                     CompleteDressUp(CharacterType.ONEPIECE, CategoryType.ONEPIECE);
                     break;
+                    //
+                    //
+                    //
                 case CharacterType.HAT:
+                    CompleteDressUp(CharacterType.HAT, CategoryType.ACC);
                     break;
                 case CharacterType.GLASSES:
+                    CompleteDressUp(CharacterType.GLASSES, CategoryType.ACC);
                     break;
                 case CharacterType.EARRING:
+                    CompleteDressUp(CharacterType.EARRING, CategoryType.ACC);
                     break;
                 case CharacterType.NECKLACE:
+                    CompleteDressUp(CharacterType.NECKLACE, CategoryType.ACC);
                     break;
                 case CharacterType.SHOES:
+                    CompleteDressUp(CharacterType.SHOES, CategoryType.ACC);
                     break;
                 case CharacterType.SOCKS:
+                    CompleteDressUp(CharacterType.SOCKS, CategoryType.ACC);
                     break;
             }
 
@@ -121,27 +130,43 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
         // 옷을 캐릭터 주변(autoDistance)이 아닌 다른 곳에 놓았을 때
         else
         {
-            Reset(); //////////////////////////////////////////////////////////////////////////////////// 여기부터!
+
+
 
             // 위치 초기화, 알파값 원상태로(1.0f)
-            if (gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite != Character.instance.gameObject.transform.GetChild((int)CharacterType.TOP).GetComponent<SpriteRenderer>().sprite)
+            switch (gameObject.transform.GetChild(0).GetComponent<PickPrefab>().pickType)
             {
-                foreach (Transform child in CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.TOP).gameObject.transform)
-                {
-                    //Debug.Log(child.name);
+                //case CharacterType.HAIR:
+                //    break;
+                //case CharacterType.EYE:
+                //    break;
 
-                    //if (gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite != child.gameObject.GetComponent<SpriteRenderer>().sprite)
-                    if (gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite == child.gameObject.GetComponent<SpriteRenderer>().sprite)
-                    {
-                        child.gameObject.GetComponent<DragItem>().SetAlpha(false);
-                    }
-                    //else
-                    //{
-                    //    child.gameObject.GetComponent<DragItem>().SetAlpha(true);
-                    //}
-                }
-
+                case CharacterType.TOP:
+                    Reset(CharacterType.TOP, CategoryType.TOP);
+                    break;
+                case CharacterType.BOTTOM:
+                    Reset(CharacterType.BOTTOM, CategoryType.BOTTOM);
+                    break;
+                case CharacterType.ONEPIECE:
+                    Reset(CharacterType.ONEPIECE, CategoryType.ONEPIECE);
+                    break;
+                case CharacterType.HAT:
+                    break;
+                case CharacterType.GLASSES:
+                    break;
+                case CharacterType.EARRING:
+                    break;
+                case CharacterType.NECKLACE:
+                    break;
+                case CharacterType.SHOES:
+                    break;
+                case CharacterType.SOCKS:
+                    break;
             }
+
+            
+
+            
 
             if (gameObject.transform.GetChild(0).gameObject != null)
             {
@@ -155,12 +180,6 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
         }
 
         GameManager.instance.IsPick = false;
-
-
-    }
-
-    private void Reset()
-    {
 
 
     }
@@ -208,6 +227,30 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         }
     }
+
+    private void Reset(CharacterType characterType, CategoryType categoryType)
+    {
+        if (gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite != Character.instance.gameObject.transform.GetChild((int)characterType).GetComponent<SpriteRenderer>().sprite)
+        {
+            foreach (Transform child in CanvasManager.instance.gameObject.transform.GetChild((int)categoryType).gameObject.transform)
+            {
+                //Debug.Log(child.name);
+
+                //if (gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite != child.gameObject.GetComponent<SpriteRenderer>().sprite)
+                if (gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite == child.gameObject.GetComponent<SpriteRenderer>().sprite)
+                {
+                    child.gameObject.GetComponent<DragItem>().SetAlpha(false);
+                }
+                //else
+                //{
+                //    child.gameObject.GetComponent<DragItem>().SetAlpha(true);
+                //}
+            }
+
+        }
+
+    }
+
 
     private void CheckItem()
     {

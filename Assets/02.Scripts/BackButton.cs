@@ -10,6 +10,9 @@ public class BackButton : MonoBehaviour
     public GameObject SaveCanvas;
     public Color test;
 
+    public AudioClip audioClip;
+
+
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(OnClick);
@@ -25,6 +28,8 @@ public class BackButton : MonoBehaviour
 
         canvas.SetActive(true);
 
+        SoundManager.instance.GetComponent<AudioSource>().clip = audioClip;
+        SoundManager.instance.GetComponent<AudioSource>().Play();
     }
 }
 
