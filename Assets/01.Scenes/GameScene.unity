@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &18680345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -984,6 +985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &54820138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,6 +1398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &77845767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &77845770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1596,6 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &106160796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2776,6 +2781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 10
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &290174622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5651,6 +5657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &624233253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5798,6 +5805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 5
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &624488062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6083,6 +6091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 7
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &687963312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6330,6 +6339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 6
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &698721807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6477,6 +6487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 0
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &714463178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6939,6 +6950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 0
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &762785879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7232,6 +7244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &775810199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7379,6 +7392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 5
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &775915448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8108,6 +8122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &878912627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9455,6 +9470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 5
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &973522313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9696,6 +9712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 0
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1010686155
 GameObject:
   m_ObjectHideFlags: 0
@@ -11062,6 +11079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 7
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1150537594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11340,7 +11358,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1194766878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 770c3daffb0bdab45beb282bf5b4e2f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4743467adf0a40d49947bdb33cd97bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1194766881
@@ -11478,6 +11496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 10
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1202422530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12227,6 +12246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 5
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1251587888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12374,6 +12394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 5
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1258749308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12809,6 +12830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 10
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1340477782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13277,6 +13299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 5
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1395613828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13707,6 +13730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 10
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1427971911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14384,6 +14408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1487775737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15026,6 +15051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 5
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1526564124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15248,6 +15274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1559809085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16294,6 +16321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1630607805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16758,6 +16786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 0
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1683584434
 GameObject:
   m_ObjectHideFlags: 0
@@ -16991,6 +17020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 8
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1715927378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17232,6 +17262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1740964454
 GameObject:
   m_ObjectHideFlags: 0
@@ -17285,6 +17316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1740964457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17432,6 +17464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RandomBG: {fileID: 1425453702}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1747556185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17673,6 +17706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1802722647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17902,6 +17936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 5
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1814150376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19382,6 +19417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 8
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1980422235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19928,6 +19964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2007471183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20619,6 +20656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 9
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2079928094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21108,6 +21146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 0
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2140959410
 MonoBehaviour:
   m_ObjectHideFlags: 0

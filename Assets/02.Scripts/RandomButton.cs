@@ -9,6 +9,8 @@ public class RandomButton : MonoBehaviour
     // ¹è°æ
     public GameObject RandomBG;
 
+    public Color color = Color.white;
+
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(OnClick);
@@ -18,7 +20,7 @@ public class RandomButton : MonoBehaviour
     {
         Character.instance.gameObject.transform.GetChild((int)CharacterType.HAIR).GetComponent<SpriteRenderer>().sprite = CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(Random.Range(0, 5)).gameObject.transform.GetChild(0).GetComponent<Image>().sprite;
         Character.instance.gameObject.transform.GetChild((int)CharacterType.EYE).GetComponent<SpriteRenderer>().sprite = CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(Random.Range(5, 10)).gameObject.transform.GetChild(0).GetComponent<Image>().sprite;
-        
+
         int r = Random.Range(0, 2);
         if (r == 1)
         {
@@ -76,6 +78,25 @@ public class RandomButton : MonoBehaviour
 
 
         RandomBG.GetComponent<BackgroundButton>().bg.sprite = RandomBG.GetComponent<BackgroundButton>().bgArray[Random.Range(0, RandomBG.GetComponent<BackgroundButton>().bgArray.Length)];
+
+
+
+
+        foreach (Transform child in CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform)
+        {
+            //Debug.Log(child.name);
+
+            color.a = 1.0f;
+
+            //child.gameObject.GetComponent<DragItem>().SetAlpha(false);
+
+            child.gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = color;
+        }
+
+
+
+
+
 
 
 

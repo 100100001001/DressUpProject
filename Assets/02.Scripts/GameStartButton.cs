@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameStartButton : MonoBehaviour
 {
+    CharacterType characterType;
+
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(OnClick);
