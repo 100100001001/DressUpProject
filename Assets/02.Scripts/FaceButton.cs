@@ -9,7 +9,7 @@ public class FaceButton : MonoBehaviour
 {
     public CharacterType characterType;
 
-    public Color color = Color.white;
+    public Color selectColor = Color.white;
 
     private void Start()
     {
@@ -29,15 +29,15 @@ public class FaceButton : MonoBehaviour
                 {
                     if (CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite == transform.GetChild(0).gameObject.GetComponent<Image>().sprite)
                     {
-                        color.a = 0.5f;
+                        selectColor.a = 0.5f;
 
-                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = color;
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = selectColor;
                     }
                     else
                     {
-                        color.a = 1.0f;
+                        selectColor.a = 1.0f;
 
-                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = color;
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = selectColor;
                     }
                 }
 
@@ -49,25 +49,43 @@ public class FaceButton : MonoBehaviour
                 {
                     if (CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite == transform.GetChild(0).gameObject.GetComponent<Image>().sprite)
                     {
-                        color.a = 0.5f;
+                        selectColor.a = 0.5f;
 
-                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = color;
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = selectColor;
                     }
                     else
                     {
-                        color.a = 1.0f;
+                        selectColor.a = 1.0f;
 
-                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = color;
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = selectColor;
                     }
                 }
 
                 break;
         }
 
-
-
-
-
     }
+
+    public void SetAlpha(bool active)
+    {
+        if (active)
+        {
+            selectColor.a = 0.5f;
+            gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = selectColor;
+            //gameObject.GetComponent<SpriteRenderer>().color = selectColor;
+        }
+        else
+        {
+            selectColor.a = 1.0f;
+            gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = selectColor;
+            //gameObject.GetComponent<SpriteRenderer>().color = selectColor;
+        }
+    }
+
+
+
+
+
+
 
 }

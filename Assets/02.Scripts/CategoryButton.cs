@@ -32,8 +32,37 @@ public class CategoryButton : MonoBehaviour
                 CanvasManager.instance.AllSetActive(false);
                 CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.SetActive(true);
 
+                //GetItemSetAlpha(CategoryType.FACE, CharacterType.HAIR);
+                //GetItemSetAlpha(CategoryType.FACE, CharacterType.EYE);
+
+                for (int i = 0; i < 5; i++)
+                {
+                    if (CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite == Character.instance.gameObject.transform.GetChild((int)CharacterType.HAIR).GetComponent<SpriteRenderer>().sprite)
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.GetComponent<FaceButton>().SetAlpha(true);
+                    }
+                    else
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.GetComponent<FaceButton>().SetAlpha(false);
+                    }
+                }
+                for (int i = 5; i < 10; i++)
+                {
+                    if (CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite == Character.instance.gameObject.transform.GetChild((int)CharacterType.EYE).GetComponent<SpriteRenderer>().sprite)
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.GetComponent<FaceButton>().SetAlpha(true);
+                    }
+                    else
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.FACE).gameObject.transform.GetChild(i).gameObject.GetComponent<FaceButton>().SetAlpha(false);
+                    }
+                }
 
                 break;
+
+            //
+            //
+            //
 
             case CategoryType.TOP:
                 CanvasManager.instance.AllSetActive(false);
@@ -54,14 +83,96 @@ public class CategoryButton : MonoBehaviour
                 CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ONEPIECE).gameObject.SetActive(true);
 
                 GetItemSetAlpha(CategoryType.ONEPIECE, CharacterType.ONEPIECE);
-
                 break;
+
+            //
+            //
+            //
 
             case CategoryType.ACC:
                 CanvasManager.instance.AllSetActive(false);
                 CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.SetActive(true);
 
-                GetItemSetAlpha(CategoryType.ACC, CharacterType.ONEPIECE);
+                //GetItemSetAlpha(CategoryType.ACC, CharacterType.HAT);
+                //GetItemSetAlpha(CategoryType.ACC, CharacterType.GLASSES);
+                //GetItemSetAlpha(CategoryType.ACC, CharacterType.EARRING);
+                //GetItemSetAlpha(CategoryType.ACC, CharacterType.NECKLACE);
+                //GetItemSetAlpha(CategoryType.ACC, CharacterType.SHOES);
+                //GetItemSetAlpha(CategoryType.ACC, CharacterType.SOCKS);
+
+                for (int i = 0; i < 8; i++)
+                {
+                    if (CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite == Character.instance.gameObject.transform.GetChild((int)CharacterType.HAT).GetComponent<SpriteRenderer>().sprite)
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(true);
+                    }
+                    else
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(false);
+                    }
+                }
+                for (int i = 8; i < 9; i++)
+                {
+                    if (CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite == Character.instance.gameObject.transform.GetChild((int)CharacterType.GLASSES).GetComponent<SpriteRenderer>().sprite)
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(true);
+                    }
+                    else
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(false);
+                    }
+                }
+                for (int i = 9; i < 11; i++)
+                {
+                    if (CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite == Character.instance.gameObject.transform.GetChild((int)CharacterType.EARRING).GetComponent<SpriteRenderer>().sprite)
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(true);
+                    }
+                    else
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(false);
+                    }
+                }
+                for (int i = 11; i < 13; i++)
+                {
+                    if (CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite == Character.instance.gameObject.transform.GetChild((int)CharacterType.NECKLACE).GetComponent<SpriteRenderer>().sprite)
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(true);
+                    }
+                    else
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(false);
+                    }
+                }
+                for (int i = 13; i < 24; i++)
+                {
+                    if (CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite == Character.instance.gameObject.transform.GetChild((int)CharacterType.SHOES).GetComponent<SpriteRenderer>().sprite)
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(true);
+                    }
+                    else
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(false);
+                    }
+                }
+                for (int i = 24; i < 28; i++)
+                {
+                    if (CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite == Character.instance.gameObject.transform.GetChild((int)CharacterType.SOCKS).GetComponent<SpriteRenderer>().sprite)
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(true);
+                    }
+                    else
+                    {
+                        CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(false);
+                    }
+                }
+
+
+
+
+
+
+
 
                 break;
         }
@@ -76,6 +187,10 @@ public class CategoryButton : MonoBehaviour
         {
             //case CategoryType.FACE:
             //    break;
+
+            //
+            //
+            //
 
             case CategoryType.TOP:
             case CategoryType.BOTTOM:
@@ -101,11 +216,8 @@ public class CategoryButton : MonoBehaviour
                 //
                 //
 
-            case CategoryType.ACC:
-
-
-
-                break;
+                //case CategoryType.ACC:
+                //    break;
 
         }
 
