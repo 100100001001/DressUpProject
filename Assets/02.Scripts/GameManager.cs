@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -96,9 +97,9 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                 case CharacterType.ONEPIECE:
                     CompleteDressUp(CharacterType.ONEPIECE, CategoryType.ONEPIECE);
                     break;
-                    //
-                    //
-                    //
+                //
+                //
+                //
                 case CharacterType.HAT:
                     CompleteDressUp(CharacterType.HAT, CategoryType.ACC);
                     break;
@@ -164,9 +165,9 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                     break;
             }
 
-            
 
-            
+
+
 
             if (gameObject.transform.GetChild(0).gameObject != null)
             {
@@ -196,7 +197,7 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
         {
             Sprite beforeItemSprite = Character.instance.gameObject.transform.GetChild((int)characterType).GetComponent<SpriteRenderer>().sprite;
 
-           
+
 
             Character.instance.gameObject.transform.GetChild((int)characterType).GetComponent<SpriteRenderer>().sprite = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
 
@@ -276,6 +277,27 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     //    isPick = active;
     //    GetComponent<BoxCollider2D>().enabled = active;
     //}
+
+
+
+    [DllImport("__Internal")]
+    private static extern void DownloadFile(byte[] array, int byteLength, string fileName);
+
+
+
+    public IEnumerator DownloadScreenshot()
+    {
+        yield return new WaitForEndOfFrame();
+
+        Debug.Log("DownloadScreenshot");
+
+        var texture = ScreenCapture.CaptureScreenshotAsTexture();
+        byte[] textureBytes = texture.EncodeToPNG();
+        DownloadFile(textureBytes, textureBytes.Length, "screenshot.png");
+        Destroy(texture);
+    }
+
+
 
 
 
