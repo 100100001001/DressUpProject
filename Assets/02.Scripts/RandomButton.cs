@@ -91,6 +91,7 @@ public class RandomButton : MonoBehaviour
             child.gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().color = color;
         }
 
+        #region MyRegion
         //
 
         for (int i = 0; i < 5; i++)
@@ -185,6 +186,17 @@ public class RandomButton : MonoBehaviour
                 CanvasManager.instance.gameObject.transform.GetChild((int)CategoryType.ACC).gameObject.transform.GetChild(i).gameObject.GetComponent<AccButton>().SetAlpha(false);
             }
         }
+        #endregion
+
+        //
+
+
+
+        GetItemSetAlpha(CategoryType.TOP, CharacterType.TOP);
+
+        GetItemSetAlpha(CategoryType.BOTTOM, CharacterType.BOTTOM);
+
+        GetItemSetAlpha(CategoryType.ONEPIECE, CharacterType.ONEPIECE);
 
 
 
@@ -196,4 +208,53 @@ public class RandomButton : MonoBehaviour
 
     }
 
+
+
+
+
+
+
+    public void GetItemSetAlpha(CategoryType categoryType, CharacterType characterType)
+    {
+
+
+        switch (categoryType)
+        {
+            //case CategoryType.FACE:
+            //    break;
+
+            //
+            //
+            //
+
+            case CategoryType.TOP:
+            case CategoryType.BOTTOM:
+            case CategoryType.ONEPIECE:
+
+                foreach (Transform child in CanvasManager.instance.gameObject.transform.GetChild((int)categoryType).gameObject.transform)
+                {
+                    //Debug.Log(child.name);
+
+                    if (Character.instance.gameObject.transform.GetChild((int)characterType).GetComponent<SpriteRenderer>().sprite != child.gameObject.GetComponent<SpriteRenderer>().sprite)
+                    {
+                        child.gameObject.GetComponent<DragItem>().SetAlpha(false);
+                    }
+                    else
+                    {
+                        child.gameObject.GetComponent<DragItem>().SetAlpha(true);
+                    }
+                }
+
+                break;
+
+                //
+                //
+                //
+
+                //case CategoryType.ACC:
+                //    break;
+
+        }
+
+    }
 }

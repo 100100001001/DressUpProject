@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.IO;
+using System.Runtime.InteropServices;
+
 
 public class SaveButton : MonoBehaviour
 {
@@ -34,12 +36,22 @@ public class SaveButton : MonoBehaviour
         canvas.SetActive(false);
 
 
-        Save();
+        //#if UNITY_EDITOR
 
+        //Save();
+
+        //#endif
+        //#if UNITY_WEBGL
+
+        SaveWebGL();
+
+        //#endif
     }
 
     public void Save()
     {
+        Debug.Log("Save");
+
         //m_FilePath = m_Path + m_FilePrefix + DateTime.Now.ToString("yyyyMMddhhmmss") + ".png";
         //ScreenCapture.CaptureScreenshot(m_FilePath);
 
@@ -54,4 +66,33 @@ public class SaveButton : MonoBehaviour
         SoundManager.instance.GetComponent<AudioSource>().Play();
 
     }
+
+    //
+    //
+    //
+
+    [DllImport("__Internal")]
+    private static extern void DownloadFile(byte[] array, int byteLength, string fileName);
+
+    public void SaveWebGL()
+    {
+        Debug.Log("SaveWebGL");
+
+        StartCoroutine(DownloadScreenshot());
+    }
+
+    IEnumerator DownloadScreenshot()
+    {
+        yield return new WaitForEndOfFrame();
+
+        Debug.Log("DownloadScreenshot");
+
+        var texture = ScreenCapture.CaptureScreenshotAsTexture();
+        byte[] textureBytes = texture.EncodeToPNG();
+        DownloadFile(textureBytes, textureBytes.Length, "screenshot.png");
+        Destroy(texture);
+    }
+
+
+
 }
