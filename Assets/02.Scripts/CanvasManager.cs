@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
 {
-
+    // 싱글톤 패턴을 사용하기 위한 인스턴스 변수
     public static CanvasManager instance;
 
     void Start()
