@@ -77,6 +77,10 @@ public class SaveButton : MonoBehaviour
         Debug.Log("SaveWebGL");
 
         GameManager.instance.StartCoroutine(GameManager.instance.DownloadScreenshot());
+
+
+        SoundManager.instance.GetComponent<AudioSource>().clip = audioClip;
+        SoundManager.instance.GetComponent<AudioSource>().Play();
     }
 
 
